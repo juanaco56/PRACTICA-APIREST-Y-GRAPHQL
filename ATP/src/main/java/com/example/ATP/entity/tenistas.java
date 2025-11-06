@@ -4,12 +4,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.time.LocalDate;
 
 @Entity
-
 public class tenistas {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Usado con MySQL para auto-incrementar
     private long id;
+
     private String nombre;
     private String apellidos;
     private int edad;
@@ -17,7 +19,8 @@ public class tenistas {
     private int ranking_atp;
     private String nacionalidad;
 
- public long getId() {
+    // Getters y Setters
+    public long getId() {
         return id;
     }
     public void setId(long id) {
